@@ -37,8 +37,8 @@ public class BulletDaoBean extends BaseDao<Bullet> implements BulletDao{
 
 	@Override
 	public int insert(Bullet bullet) {
-		String sql="insert into tb_bullet(user_id,video_id,content,publish_time,video_time,color,mode) values(?,?,?,?,?,?,?)";
-		Object[] params=new Object[]{
+		final String sql="insert into tb_bullet(user_id,video_id,content,publish_time,video_time,color,mode) values(?,?,?,?,?,?,?)";
+		final Object[] params=new Object[]{
 				bullet.getUserId(),
 				bullet.getVideoId(),
 				bullet.getContent(),

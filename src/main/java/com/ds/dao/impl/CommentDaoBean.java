@@ -63,8 +63,8 @@ public class CommentDaoBean extends BaseDao<Comment> implements CommentDao{
 
 	@Override
 	public int insert(Comment comment) {
-		String sql="insert into tb_comment(content,publish_time,post_id,user_id) values(?,?,?,?)";
-		Object[] params=new Object[]{
+		final String sql="insert into tb_comment(content,publish_time,post_id,user_id) values(?,?,?,?)";
+		final Object[] params=new Object[]{
 				comment.getContent(),
 				comment.getDate(),
 				comment.getPostId(),
