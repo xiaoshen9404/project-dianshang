@@ -100,12 +100,12 @@ public class VideoDaoBean extends BaseDao<Video> implements VideoDao{
 
 	@Override
 	public int update(int id, Video video) {
-		String sql="update tb_video set"
+		String sql="update tb_video set "
 				+ "video_id=?,"
 				+ "user_id=?,"
 				+ "title=?,"
 				+ "date=?,"
-				+ "uri=?"
+				+ "uri=? "
 				+ "where video_id=?";
 		
 		Object[] params=new Object[]{
@@ -113,7 +113,8 @@ public class VideoDaoBean extends BaseDao<Video> implements VideoDao{
 				video.getUserId(),
 				video.getTitle(),
 				video.getDate(),
-				video.getUri()
+				video.getUri(),
+				id
 				
 		};
 		return jdbcTemplate.update(sql,params);
